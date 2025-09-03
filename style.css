@@ -1,4 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
-/* ... (todo o resto do seu CSS permanece o mesmo) ... */
-.cta-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); opacity: 0.3; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root{
+  --ring: 0 1px 2px rgba(0,0,0,.05),0 2px 6px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box}
+html,body{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+
+/* Utilitários */
+.container{max-width:1200px}
+.card{
+  background:#f8fafc;border:1px solid #e5e7eb;border-radius:16px;padding:18px;box-shadow:var(--ring);
+}
+.card-title{font-weight:700;font-size:1.1rem;margin-bottom:.25rem}
+.product{
+  background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:18px;box-shadow:var(--ring);display:flex;flex-direction:column;gap:6px
+}
+.product h4{font-weight:700;font-size:1.15rem}
+.price{font-weight:800;color:#111827}
+.btn-add,.btn-primary,.btn-secondary{
+  padding:10px 14px;border-radius:9999px;font-weight:700;transition:.2s;display:inline-flex;align-items:center;justify-content:center
+}
+.btn-add{background:#111827;color:#fff}
+.btn-add:hover{background:#000}
+.btn-primary{background:#10b981;color:#fff}
+.btn-primary:hover{background:#059669}
+.btn-secondary{background:#374151;color:#fff}
+.btn-secondary:hover{background:#111827}
+.input{
+  width:100%;border:1px solid #e5e7eb;border-radius:12px;padding:10px 12px;background:#fff;outline:none
+}
+.input:focus{border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,.15)}
+.label{display:block;font-weight:600;margin-bottom:.35rem}
+.link{color:#2563eb;text-decoration:underline}
+.link:hover{color:#1d4ed8}
+.tag{
+  background:#fff;border:1px solid #e5e7eb;border-radius:9999px;padding:6px 10px;display:inline-block;text-align:center
+}
+
+.step{background:#f8fafc;border:1px solid #e5e7eb;border-radius:16px;padding:16px;box-shadow:var(--ring);text-align:center}
+.step-badge{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:9999px;background:#111827;color:#fff;font-weight:800;margin-bottom:8px}
+.faq{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:12px}
+.faq>summary{cursor:pointer;font-weight:700}
+.stat{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:10px;box-shadow:var(--ring)}
+.stat-number{font-weight:800;font-size:1.25rem}
+.stat-label{font-size:.8rem;color:#6b7280}
+
+/* Modal */
+#modal .prose{color:#374151}
+#modal.show{display:flex}
+
+/* Acessibilidade em foco visível para links no footer */
+footer a:focus{outline:3px solid #93c5fd;outline-offset:2px}
+
+/* Responsivo */
+@media (max-width: 480px){
+  .product{padding:14px}
+}
+

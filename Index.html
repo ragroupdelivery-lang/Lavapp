@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanderia Express - Catálogo Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="gradient-bg min-h-screen">
+
+    <div id="notification" class="notification glass-effect rounded-xl p-4 shadow-xl">
+        <div class="flex items-center space-x-3">
+            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-sm font-medium text-gray-800" id="notification-text"></span>
+        </div>
+    </div>
+
+    <header class="relative overflow-hidden">
+        <div class="hero-pattern absolute inset-0"></div>
+        <div class="relative container mx-auto px-4 py-8">
+            <div class="glass-effect rounded-2xl p-6 shadow-2xl">
+                <div class="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
+                    <div class="flex items-center space-x-4">
+                        <div class="premium-button p-4 rounded-2xl shadow-lg floating-animation">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
+                        </div>
+                        <div>
+                            <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-2">Lavanderia Express</h1>
+                            <p class="text-gray-600 text-lg">Cuidado premium para suas roupas com tecnologia avançada</p>
+                            <div class="flex items-center space-x-4 mt-2">
+                                <div class="flex items-center space-x-1"><span class="text-yellow-400">⭐⭐⭐⭐⭐</span> <span class="text-sm text-gray-600">4.9/5 (2.847 avaliações)</span></div>
+                                <div class="text-sm text-green-600 font-medium">✅ Entrega em 24h</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-button text-white px-8 py-4 rounded-2xl shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+                            <div>
+                                <div class="font-bold text-lg">Carrinho</div>
+                                <div class="text-sm opacity-90"><span id="cart-count">0</span> itens • <span id="header-total">R$ 0,00</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div class="glass-effect rounded-2xl shadow-2xl mb-8">
+                    <div class="p-8 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h2 class="text-3xl font-bold text-gray-800 mb-2">Nossos Serviços Premium</h2>
+                                <p class="text-gray-600">Escolha entre nossos planos mensais exclusivos ou serviços avulsos personalizados</p>
+                            </div>
+                            <div class="hidden lg:block">
+                                <div class="flex items-center space-x-2 text-sm text-gray-500"><span class="w-3 h-3 bg-green-400 rounded-full pulse-animation"></span> <span>Disponível agora</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 pb-0">
+                        <div class="flex flex-wrap gap-2 mb-8 bg-gray-100 p-2 rounded-xl" id="tabs-nav"></div>
+                        <div id="tab-content" class="pb-8"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-1">
+                <div class="glass-effect rounded-2xl shadow-2xl sticky top-4">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800">Seu Pedido</h3>
+                                <p class="text-gray-600 text-sm">Revise e finalize sua compra</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Total</div>
+                                <div id="total-price" class="text-2xl font-bold price-highlight">R$ 0,00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div id="cart-items" class="mb-6 max-h-80 overflow-y-auto"></div>
+                        <div id="order-summary" class="hidden border-t pt-6 mb-6">
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between"><span class="text-gray-600">Subtotal:</span> <span id="subtotal">R$ 0,00</span></div>
+                                <div class="flex justify-between"><span class="text-gray-600">Taxa de entrega:</span> <span class="text-green-600">Grátis</span></div>
+                                <div class="flex justify-between font-bold text-lg pt-2 border-t"><span>Total:</span> <span id="final-total" class="price-highlight">R$ 0,00</span></div>
+                            </div>
+                        </div>
+                        <form id="order-form" class="space-y-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-gray-700 flex items-center"><span class="mr-2">👤</span> Nome Completo</label>
+                                <input type="text" id="customer-name" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Seu nome completo">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-gray-700 flex items-center"><span class="mr-2">📱</span> Telefone</label>
+                                <input type="tel" id="customer-phone" required maxlength="15" class="form-input w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="(11) 99999-9999">
+                            </div>
+                            <div class="space-y-4">
+                                <label class="text-sm font-semibold text-gray-700 flex items-center"><span class="mr-2">📍</span> Endereço de Entrega</label>
+                                <div class="relative">
+                                    <input type="text" id="customer-cep" required maxlength="9" class="form-input w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="00000-000">
+                                    <div id="cep-loading" class="hidden absolute right-3 top-1/2 transform -translate-y-1/2"><div class="loading-spinner w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full"></div></div>
+                                    <div id="cep-error" class="hidden text-red-500 text-xs mt-1">CEP não encontrado</div>
+                                </div>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <input type="text" id="customer-street" required class="form-input col-span-2 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Rua/Avenida" readonly>
+                                    <input type="text" id="customer-number" required class="form-input px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Número">
+                                </div>
+                                <input type="text" id="customer-complement" class="form-input w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Complemento (opcional)">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <input type="text" id="customer-neighborhood" required class="form-input px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Bairro" readonly>
+                                    <input type="text" id="customer-city" required class="form-input px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Cidade" readonly>
+                                </div>
+                                <input type="text" id="customer-state" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Estado" readonly>
+                            </div>
+                            <div class="space-y-4">
+                                <label class="text-sm font-semibold text-gray-700 flex items-center"><span class="mr-2">📅</span> Agendamento da Coleta</label>
+                                <div class="space-y-2">
+                                    <label class="text-xs text-gray-600">Data da Coleta</label>
+                                    <input type="date" id="pickup-date" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <div id="date-error" class="hidden text-red-500 text-xs">Selecione uma data válida (segunda a sexta-feira)</div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs text-gray-600">Turno para Coleta</label>
+                                    <div class="grid grid-cols-1 gap-3" id="shift-options"></div>
+                                    <div id="shift-info" class="text-xs text-gray-500 mt-2">💡 Você pode solicitar coleta até 2h30 antes do final do turno</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-gray-700 flex items-center"><span class="mr-2">📝</span> Observações (opcional)</label>
+                                <textarea id="customer-notes" rows="2" class="form-input w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none" placeholder="Instruções especiais, preferências..."></textarea>
+                            </div>
+                            <button type="submit" id="send-order" class="success-button w-full text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center space-x-3 text-lg">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                                <span>Finalizar Pedido via WhatsApp</span>
+                            </button>
+                            <div class="text-center text-xs text-gray-500 mt-4">🔒 Seus dados estão seguros • ⚡ Resposta em até 5 minutos</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-16 py-8">
+        <div class="container mx-auto px-4">
+            <div class="glass-effect rounded-2xl p-6 text-center">
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-2xl">🏆</span>
+                        <div class="text-left">
+                            <div class="font-bold text-gray-800">Lavanderia Express</div>
+                            <div class="text-sm text-gray-600">Excelência em cuidados têxteis desde 2020</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-6 text-sm text-gray-600">
+                        <div class="flex items-center space-x-1"><span>🚚</span> <span>Entrega grátis</span></div>
+                        <div class="flex items-center space-x-1"><span>⏰</span> <span>24h de prazo</span></div>
+                        <div class="flex items-center space-x-1"><span>💯</span> <span>Garantia total</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97906477b41df1e5',t:'MTc1Njg1MTYwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

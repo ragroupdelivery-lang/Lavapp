@@ -1,0 +1,36 @@
+{
+  "planos": {
+    "title": "Planos Mensais",
+    "subtitle": "A solução perfeita para cada estilo de vida",
+    "services": [
+      { "id": 1, "name": "Plano SOLO", "tagline": "Ideal para quem mora sozinho", "price": 169.90, "originalPrice": 199.90, "unit": "mês", "description": "4 recolhas mensais. Suas roupas são tratadas com sabão Omo Profissional e finalizadas com o toque suave de Comfort.", "features": ["4 recolhas mensais", "Até 8kg por cesto", "Omo Profissional + Comfort", "Entrega grátis na sua porta"], "problem": "Mora sozinho e quer praticidade?", "solution": "Este plano foi feito para você!", "savings": "Economize R$ 30" },
+      { "id": 2, "name": "Plano DUO", "tagline": "Perfeito para casais ativos", "price": 259.90, "originalPrice": 299.90, "unit": "mês", "description": "6 recolhas mensais. Utilizamos Omo Profissional e Comfort para garantir que suas roupas estejam sempre impecáveis.", "features": ["6 recolhas mensais", "Até 8kg por cesto", "Omo Profissional + Comfort", "Entrega grátis", "Suporte prioritário"], "popular": true, "problem": "Casal com agenda corrida?", "solution": "Mais tempo para vocês dois!", "savings": "Economize R$ 40" },
+      { "id": 3, "name": "Plano INFINITY", "tagline": "A solução para famílias grandes", "price": 329.90, "originalPrice": 399.90, "unit": "mês", "description": "8 recolhas mensais com a qualidade Omo Profissional e Comfort para cuidar das roupas de quem você ama.", "features": ["8 recolhas mensais", "Até 8kg por cesto", "Omo Profissional + Comfort", "Entrega grátis", "Suporte VIP 24h", "Desconto em serviços extras"], "problem": "Família grande, muita roupa?", "solution": "Tranquilidade para toda família!", "savings": "Economize R$ 70" },
+      { "id": 4, "name": "Ciclo Extra com Desconto", "tagline": "Para quando você precisa de mais", "price": 7.50, "originalPrice": 15.00, "unit": "ciclo", "description": "Exclusivo para assinantes! Adicione ciclos extras com 50% de desconto." },
+      { "id": 5, "name": "Cuidado Hipoalergênico", "tagline": "Especial para peles sensíveis", "price": 10.00, "unit": "ciclo", "description": "Substituímos o amaciante padrão pelo Comfort Puro Cuidado, dermatologicamente testado." }
+    ]
+  },
+  "avulsos": {
+    "title": "Serviços Avulsos",
+    "subtitle": "Soluções pontuais para suas necessidades específicas",
+    "services": [
+      { "id": 6, "name": "Cesto Base (Lavar & Dobrar)", "tagline": "O essencial para sua semana", "price": 44.90, "unit": "cesto", "description": "Até 8kg de roupas tratadas com Omo Profissional e Comfort.", "features": ["Até 8kg de roupas", "Omo Profissional + Comfort", "Secagem controlada", "Dobra cuidadosa"], "problem": "Precisa lavar roupas pontualmente?", "solution": "Solução rápida e eficiente!" },
+      { "id": 17, "name": "Ciclo Adicional de Cuidado", "tagline": "Cores e tecidos tratados separadamente", "price": 15.00, "unit": "ciclo", "description": "Adicione um ciclo de lavagem extra ao seu Cesto Base para separar peças brancas, pretas, coloridas ou delicadas.", "problem": "Quer separar roupas por tipo?", "solution": "Adicione um ciclo e relaxe!", "isNew": true },
+      { "id": 16, "name": "Tratamento Tira-Manchas", "tagline": "Para manchas que parecem impossíveis", "price": 14.90, "unit": "tratamento", "description": "Tratamento intensivo com Vanish Oxi Action para remover manchas difíceis e revitalizar o branco." },
+      { "id": 8, "name": "Cuidado Hipoalergênico", "price": 15.00, "unit": "cesto", "description": "Lavagem completa com Comfort Puro Cuidado. Ideal para peles sensíveis, bebês e pessoas com alergias." },
+      { "id": 9, "name": "Passadoria: 5 Peças", "price": 19.90, "unit": "serviço", "description": "Adicione a passadoria profissional para receber suas peças prontas para usar." },
+      { "id": 10, "name": "Passadoria: 10 Peças", "price": 34.90, "unit": "serviço", "description": "Adicione a passadoria profissional para receber suas peças prontas para usar." },
+      { "id": 11, "name": "Passadoria: 20 Peças", "price": 58.90, "unit": "serviço", "description": "Adicione a passadoria profissional para receber suas peças prontas para usar." }
+    ]
+  },
+  "especiais": {
+    "title": "Cuidados Especiais",
+    "subtitle": "Tratamento premium para suas peças mais queridas",
+    "services": [
+      { "id": 12, "name": "Edredom/Cobertor (Casal/Queen)", "tagline": "Higiene profunda para noites perfeitas", "price": 44.90, "unit": "peça", "description": "Higienização com Omo Profissional. Entregue em embalagem protetora de PVC.", "features": ["Higienização com Omo Profissional", "Eliminação de ácaros", "Secagem especial", "Embalagem protetora de PVC"], "problem": "Edredom com cheiro ou ácaros?", "solution": "Higiene profunda e proteção!" },
+      { "id": 13, "name": "Edredom/Cobertor (King)", "tagline": "Cuidado especial para peças grandes", "price": 79.90, "unit": "peça", "description": "Tratamento premium com Omo Profissional e embalagem protetora de PVC." },
+      { "id": 14, "name": "Jogo de Cama", "tagline": "Frescor para noites perfeitas", "price": 39.90, "unit": "jogo", "description": "Lavagem completa com o cuidado de Omo e Comfort." },
+      { "id": 15, "name": "Lavagem de Toalhas", "tagline": "Maciez e absorção renovadas", "price": 39.90, "unit": "kit", "description": "Kit com 2 toalhas de corpo + 4 de rosto. Processo especial com Omo e Comfort." }
+    ]
+  }
+}
